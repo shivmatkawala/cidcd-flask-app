@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <title>HOME</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <title>NovaLearn – Home</title>
 </head>
 <body>
 
-  <main>
-    <div class="card-meta">8 modules • 4 projects</div>
+  <main class="main-content">
+    <div class="card-meta">📦 8 modules • 🛠️ 4 projects</div>
     <a class="btn small" href="#">View</a>
 
-    <section id="pricing" class="section">
+    <!-- 💰 Pricing Section -->
+    <section id="pricing" class="section alt">
       <div class="container">
-        <h2 class="section-title">Transparent pricing</h2>
-        <div class="grid pricing-grid">
+        <h2 class="section-title">Transparent Pricing</h2>
+        <div class="pricing-grid">
           <div class="price-card">
             <h3>Free</h3>
             <div class="price">$0<span class="period">/mo</span></div>
             <ul>
-              <li>Access to community resources not possible good or bad</li>
+              <li>Limited community access</li>
               <li>10 free courses</li>
             </ul>
             <a class="btn ghost" href="#">Get Free App</a>
@@ -44,38 +45,51 @@
               <li>Team plans & SSO</li>
               <li>Dedicated success manager</li>
             </ul>
-            <a class="btn" href="#">Contact Sales</a>
+            <a class="btn ghost" href="#">Contact Sales</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 🔥 Dynamic Features Section -->
+    <!-- ⚙️ Features Section -->
     <section id="features" class="section">
       <div class="container">
         <h2 class="section-title">Platform Features</h2>
-        <ul>
+        <div class="features-grid">
           {% for feature in features %}
-            <li><strong>{{ feature.title }}</strong>: {{ feature.desc }}</li>
+            <div class="feature">
+              <div class="feature-icon">✨</div>
+              <h3>{{ feature.title }}</h3>
+              <p>{{ feature.desc }}</p>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
     </section>
 
-    <!-- 🌍 Dynamic Metrics Section -->
-    <section id="metrics" class="section">
+    <!-- 🌍 Metrics Section -->
+    <section id="metrics" class="section alt">
       <div class="container">
         <h2 class="section-title">Global Reach</h2>
-        <ul>
-          <li>Students: {{ metrics.students }}</li>
-          <li>Courses: {{ metrics.courses }}</li>
-          <li>Countries: {{ metrics.countries }}</li>
-        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="num">{{ metrics.students }}</div>
+            <div class="label">Students</div>
+          </div>
+          <div class="metric">
+            <div class="num">{{ metrics.courses }}</div>
+            <div class="label">Courses</div>
+          </div>
+          <div class="metric">
+            <div class="num">{{ metrics.countries }}</div>
+            <div class="label">Countries</div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- 🕒 Footer with Dynamic Year -->
+  <!-- 🕒 Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© {{ current_year }} NovaLearn. All rights reserved.</div>
